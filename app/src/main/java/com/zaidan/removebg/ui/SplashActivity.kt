@@ -16,21 +16,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        if (checkInternet()) {
-            privacyPolicy()
-        }
-    }
-    private fun checkInternet(): Boolean {
-        val status: Boolean
-        val connect = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val networkInfo = connect.activeNetworkInfo
-        if (networkInfo != null && networkInfo.isConnected === true) {
-            status = true
-        } else {
-            Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show()
-            status = false
-        }
-        return status
+        privacyPolicy()
     }
 
     private fun privacyPolicy() {
